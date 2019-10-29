@@ -9,4 +9,10 @@
     <th><%= form.label :body %></th>
     <td><%= form.text_area :body, row: 10, cols: 45 %></td>
   </tr>
+  <tr>
+    <th><%= form.label :posted_at,for: "entry_psoted_at_1i"%></th>
+    <td><%= form.datetime_select :posted_at,
+            start_year: 2000, end_year: Time.current.year + 1,
+            use_month_numbers: true %></td>
+  </tr>
 </table>
