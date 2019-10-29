@@ -1,8 +1,7 @@
 <h1><%= @page_title %></h1>
 
-<%= form_for @entry do |form| %>
+<%= form_for(@entry) do |form| %>
   <%= render 'form',form: form %>
-  <div>
     <%= form.submit %>
-  </div>
 <% end %>
+<%=link_to '一覧に戻る', entries_path %>

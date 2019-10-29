@@ -12,11 +12,12 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new(params[:id])
+    @entry = Entry.new(entry_params)
     if @entry.save
       redirect_to @entry, notice: "ブログを作成しました"
     else
-      render "new"
+
+      render "new",  notice: "ブログの作成ができませんでした"
     end
   end
 
@@ -31,5 +32,17 @@ class EntriesController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+    rendirect_to :entries, notice: "記事を削除しました"
+  end
+
+  private
+
+  def entry_params
+    params.require(:entry).permit(:title,:body,:posted_at)
   end
 end

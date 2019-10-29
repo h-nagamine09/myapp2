@@ -1,18 +1,18 @@
 
-
 <table class="attr">
   <tr>
-    <th width="80"><%= form.label :title %></th>
+    <th width="80"><%= form.label :title,'タイトル' %></th>
     <td><%= form.text_field :title, size: 50 %></td>
   </tr>
   <tr>
-    <th><%= form.label :body %></th>
+    <th><%= form.label :body,'本文'%></th>
     <td><%= form.text_area :body, row: 10, cols: 45 %></td>
   </tr>
   <tr>
-    <th><%= form.label :posted_at,for: "entry_psoted_at_1i"%></th>
+    <th><%= form.label :posted_at,'投稿日時', for: "entry_psoted_at_1i" %></th>
     <td><%= form.datetime_select :posted_at,
             start_year: 2000, end_year: Time.current.year + 1,
             use_month_numbers: true %></td>
   </tr>
+
 </table>

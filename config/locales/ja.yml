@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    entry:
+      title: タイトル
+      body: ブログ
+      posted_at: 日時
+      status: 状態
+      status_draft: 下書き
+      status_public: 公開

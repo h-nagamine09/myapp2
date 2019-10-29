@@ -1,6 +1,7 @@
-<h1><%=@entry.name%>のブログ</h1>
+<h1>Hirokinのブログ</h1>
 <h2><%= @entry.title %></h2>
 
 <%= simple_format(@entry.body)%>
 
 <%= render "footer", entry: @entry%>
+<%=link_to '一覧に戻る', entries_path%>

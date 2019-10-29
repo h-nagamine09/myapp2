@@ -1,11 +1,14 @@
+<h1>ブログ一覧</h1>
+
 <%if @entries.present?%>
-  <h1><%= page_title %></h1>
-  <% @entries .each do |entry| %>
-    <h2><%= entry.title %></h2>
-    <p>truncate(entry.body), length: 80 %></p>
-    <%=link_to "もっと読む", entry %>
+  <% @entries.each do |entry| %>
+  <h2><%= link_to entry.title %></h2>
+  <p><%=truncate(entry.body,length: 80)%></p>
+  <%=link_to 'もっと読む', entry %>
   <% end %>
-  <%=paginate @entries%>
+  <%= link_to 'ブログの作成', :new_entry %>
 <% else %>
   <p>記事がありません</p>
+  <%= link_to 'ブログの作成', :new_entry %>
+
 <% end %>
