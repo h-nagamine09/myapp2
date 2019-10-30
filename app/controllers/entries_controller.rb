@@ -37,7 +37,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry = Entry.find(params[:id])
     @entry.destroy
-    rendirect_to :entries, notice: "記事を削除しました"
+    redirect_to :entries, notice: "記事を削除しました"
   end
 
   private

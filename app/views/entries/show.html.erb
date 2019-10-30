@@ -2,6 +2,10 @@
 <h2><%= @entry.title %></h2>
 
 <%= simple_format(@entry.body)%>
+<%= @entry.posted_at%>
+<div class="button">
+  <%=link_to '削除',@entry, method: :delete, data: {confirm: '本当に削除しますか?' } %>
+  <%=link_to '一覧に戻る', entries_path%>
+</div>
 
 <%= render "footer", entry: @entry%>
-<%=link_to '一覧に戻る', entries_path%>
